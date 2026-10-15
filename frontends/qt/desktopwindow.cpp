@@ -152,11 +152,7 @@ bool readRect(const QVariantMap &input, qreal zoom, const QRect &bounds, QRect *
 }
 
 DesktopWindow::DesktopWindow(QWebEngineView *view, QWidget *parent) : QWidget(parent), view_(view) {
-#if defined(Q_OS_LINUX)
     native_ = qEnvironmentVariableIsSet("BITBOXAPP_NATIVE_DECORATIONS");
-#else
-    native_ = true;
-#endif
     setWindowTitle("BitBoxApp");
     setMouseTracking(true);
 #if defined(Q_OS_LINUX)

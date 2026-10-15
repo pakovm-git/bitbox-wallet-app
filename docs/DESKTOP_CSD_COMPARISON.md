@@ -6,16 +6,20 @@ not a replacement for the complete `desktop-modernization-effort` branch.
 
 ## Included
 
-- Linux CSD, native controls, desktop button ordering, system dragging/resizing,
-  rounded surfaces and shadows, and the startup transparency correction.
+- Native decorations integrated into the client surface on Linux, Windows and
+  macOS. Linux retains desktop button ordering, rounded surfaces/shadows and
+  startup transparency handling; Windows retains native caption roles and
+  resize hit testing; macOS retains native traffic lights.
 - The native Qt host, restricted WebChannel contract, and minimal web geometry
   reporting required for native dragging without JavaScript pointer round trips.
 - A global window-contour mask. This is part of the rounded CSD surface.
 
-The comparison forces CSD by default on Linux, ignoring the saved system-border
+The comparison forces CSD by default on desktop systems, ignoring the saved system-border
 preference so that an earlier testing preference cannot hide the demonstration.
 `BITBOXAPP_NATIVE_DECORATIONS=1` remains an explicit troubleshooting override.
-Other desktop platforms retain their original system decorations in this build.
+The default web UI stays unchanged on all platforms. Linux compilation passed
+for the Linux-only comparison commit. Windows and macOS compilation and runtime
+validation of this comparison branch are pending.
 
 ## Intentionally omitted
 
@@ -31,8 +35,9 @@ There is no send-flow redesign in this branch.
 
 ## Build and compare
 
-Use the repository's normal `make qt-linux` target with the configured toolchain;
-the standard development helper runs that target. See [BUILD.md](BUILD.md).
+Use the repository's normal `make qt-linux`, `make qt-windows` or `make qt-osx`
+target on its native host. The standard development helper runs those targets.
+See [BUILD.md](BUILD.md).
 Run the compiled app with `-testnet` when demonstrating testnet mode. This flag
 does not isolate wallet storage. Close another running instance before launch.
 
