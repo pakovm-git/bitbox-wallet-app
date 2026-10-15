@@ -98,7 +98,7 @@ export const Header = ({
       ${variant === 'page' && style.page || ''}
       ${variant === 'fullscreen' && style.fullscreen || ''}
     `}>
-      <div className={style.header}>
+      <div className={style.header} data-csd-comparison-header>
         {variant !== 'fullscreen' && (
           <div
             className={`
@@ -107,6 +107,7 @@ export const Header = ({
               ${hideSidebarToggler && style.hideSidebarToggler || ''}
             `}
             onClick={toggleSidebar}
+            data-csd-comparison-control
           >
             <MenuDark className="show-in-lightmode" />
             <MenuLight className="show-in-darkmode" />

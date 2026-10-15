@@ -127,7 +127,7 @@ const Sidebar = ({
     <div className={style.sidebarContainer}>
       <div key="overlay" className={[style.sidebarOverlay, activeSidebar ? style.active : ''].join(' ')} onClick={toggleSidebar}></div>
       <nav className={[style.sidebar, activeSidebar ? style.forceShow : ''].join(' ')}>
-        <div key="app-logo" className={style.sidebarLogoContainer}>
+        <div key="app-logo" className={style.sidebarLogoContainer} data-csd-comparison-header>
           <Link
             to={homePath}
             onClick={handleSidebarItemClick}>

@@ -17,6 +17,7 @@ import { KeystoreConnectPrompt } from './components/keystoreconnectprompt';
 import { Sidebar } from './components/sidebar/sidebar';
 import { RouterWatcher } from './utils/route';
 import { Darkmode } from './components/darkmode/darkmode';
+import { CsdComparison } from './components/desktop-chrome/csd-comparison';
 import { AuthRequired } from './components/auth/authrequired';
 import { WCSigningRequest } from './components/wallet-connect/incoming-signing-request';
 import { GlobalBannersProvider } from './contexts/global-banners-provider';
@@ -46,6 +47,7 @@ const AppFrame = () => {
   return (
     <>
       <Darkmode />
+      <CsdComparison />
       <div className="app">
         <AuthRequired/>
         <Sidebar
